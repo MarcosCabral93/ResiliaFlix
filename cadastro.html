@@ -4,20 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resiflix</title>
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 
 <body>
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+
+
+        <div aria-live="polite" aria-atomic="true" id="div_toast" class="d-flex justify-content-center align-items-center"
+            style="height: 200px;">
+
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="${id}">
+                <div class="toast-header">
+                    <span class="badge bg-danger">&nbsp;</span>
+                    &nbsp;
+                    <strong class="me-auto">Error</strong>
+                    
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div id='msg' class="toast-body bg-light">
+                  
+                </div>
+            </div>`
+        </div>
+    </div>
+
+
 
     <header>
 
         <nav class="navbar navbar-light bg-transparent d-flex justify-content-between">
             <article class="navbar-brand h1 fonte-do-texto-cabeçalho mt-1"> RESILIAFLIX</article>
             <div class="form-inline my-2 my-lg-0">
-                <button class="btn btn-lg mr-4 rounded-0 fonte-do-texto" type="submit" data-toggle="modal" data-target="#modal-login"><a class="text-decoration-none" href="index.html" id="btnVoltar">Voltar</a></button>
+                <button class="btn btn-lg mr-4 rounded-0 fonte-do-texto" type="submit" data-toggle="modal"
+                    data-target="#modal-login"><a class="text-decoration-none" href="index.html"
+                        id="btnVoltar">Voltar</a></button>
             </div>
         </nav>
     </header>
@@ -26,62 +51,67 @@
         <h1>Cadastro</h1>
     </div>
 
-    <div class="container border-0">
-        <form class="row g-3">
+        <div class="container border-0">
+            <form class="row g-3">
 
-            <div class="col-12 mt-md-4">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" placeholder="Ex: Pedro Alves Pereira Azevedo" required>
+                <div class="col-12 mt-md-4">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Ex: Pedro Alves Pereira Azevedo"
+                        required>
 
-            </div>
+                </div>
 
-            <div class="col-12 mt-md-4">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control border-0" id="email" placeholder="seuEmail@xxxx.com" required>
+                <div class="col-12 mt-md-4">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control border-0" id="email" placeholder="seuEmail@xxxx.com"
+                        required>
 
-            </div>
+                </div>
 
-            <div class="col-md-6 mt-md-4">
-                <label for="senha" class="form-label">Senha</label>
-                <input type="password" class="form-control border-0" id="senha" required placeholder="Insira sua senha">
-            </div>
-            <div class="col-md-6 mt-md-4">
-                <label for="confiSenha" class="form-label">Confirme sua senha</label>
-                <input type="password" class="form-control border-0" id="confiSenha" required>
-            </div>
-
-
-            <div class="col-md-6 mt-md-4">
-                <label for="cep" class="form-label">Seu CEP</label>
-                <input type="text" class="form-control border-0" id="cep" placeholder="xxxxx-xxx" required>
-            </div>
-            <div class="col-md-4 mt-md-4">
-                <label for="localidade" class="form-label">Cidade</label>
-                <input type="text" class="form-control border-0" id="localidade">
-            </div>
-
-            <div class="col-md-2 mt-md-4">
-                <label for="uf" class="form-label">UF</label>
-                <input type="text" class="form-control border-0" id="uf">
-            </div>
+                <div class="col-md-6 mt-md-4">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" class="form-control border-0" id="senha" required
+                        placeholder="Insira sua senha">
+                </div>
+                <div class="col-md-6 mt-md-4">
+                    <label for="confiSenha" class="form-label">Confirme sua senha</label>
+                    <input type="password" class="form-control border-0" id="confiSenha" required>
+                </div>
 
 
-            <div class="col-12 mt-md-4">
-                <label for="logradouro" class="form-label">Endereço</label>
-                <input type="text" class="form-control border-0" id="logradouro" placeholder="Rua, avenida. etc.">
-            </div>
+                <div class="col-md-6 mt-md-4">
+                    <label for="cep" class="form-label">Seu CEP</label>
+                    <input type="text" class="form-control border-0" id="cep" placeholder="xxxxx-xxx" required>
+                </div>
+                <div class="col-md-4 mt-md-4">
+                    <label for="localidade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control border-0" id="localidade">
+                </div>
+
+                <div class="col-md-2 mt-md-4">
+                    <label for="uf" class="form-label">UF</label>
+                    <input type="text" class="form-control border-0" id="uf">
+                </div>
 
 
-            <div class="col-12 d-flex justify-content-center mb-3">
-                <button id="btn" class="btn btn-primary border-0">Processar</button>
-            </div>
-        </form>
+                <div class="col-12 mt-md-4">
+                    <label for="logradouro" class="form-label">Endereço</label>
+                    <input type="text" class="form-control border-0" id="logradouro" placeholder="Rua, avenida. etc.">
+                </div>
 
-    </div>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/cadastro.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+                <div class="col-12 d-flex justify-content-center mb-3">
+                    <button id="btn" class="btn btn-primary border-0">Processar</button>
+                </div>
+            </form>
+
+        </div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/cadastro.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>

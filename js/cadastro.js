@@ -13,7 +13,7 @@ cep.addEventListener("blur", (e) => {
             response.json()
                 .then(data => Showdata(data))
         })
-        .catch(e => console.log(alert("O CEP: " + cep.value + " Não é válido")));
+        .catch(e => alert_erro("O CEP: " + cep.value + " Não é válido"))
 })
 
 const Showdata = (result) => {
@@ -28,37 +28,37 @@ const Showdata = (result) => {
 /* Função Validar */
 function validar() {
     // pegando o valor do nome pelos names
-    var nome = document.getElementById("nome");
-    var email = document.getElementById("email");
-    var senha = document.getElementById("senha");
-    var confiSenha = document.getElementById("confiSenha");
-    var cep = document.getElementById("cep");
+    let nome = document.getElementById("nome");
+    let email = document.getElementById("email");
+    let senha = document.getElementById("senha");
+    let confiSenha = document.getElementById("confiSenha");
+    let cep = document.getElementById("cep");
 
     // verificar se o nome está vazio
     if (nome.value == "") {
-        alert("Nome não informado");
+        alert_erro("Nome não informado");
         nome.focus();
         return;
     }
     if (email.value == "") {
-        alert("E-mail não informado");
+        alert_erro("E-mail não informado");
         email.focus();
         return;
     }
 
     if (senha.value == "") {
-        alert("Digite Alguma senha")
+        alert_erro("Digite Alguma senha")
         email.focus()
         return
     }
     if (senha.value != confiSenha.value) {
-        alert("As senhas estão diferentes!")
+        alert_erro("As senhas estão diferentes!")
         confiSenha.focus()
         return
     }
 
     if (cep.value == "") {
-        alert("CEP não informado");
+        alert_erro("CEP não informado");
         cep.focus();
         return;
     }
@@ -67,7 +67,21 @@ function validar() {
 
 }
 
-$('#btn').click(function(evento) {
+$('#btn').click(function (evento) {
     evento.preventDefault()
     validar();
 });
+
+function alert_erro(msg){
+    let texto = document.getElementById('msg')
+    texto.innerHTML = msg
+    
+    $('.toast').toast('show')
+        setTimeout(() => {
+            if (document.getElementById('div_toast'))
+            $('.toast').toast('hide')
+        }, 5000)
+    
+}
+
+
